@@ -25,7 +25,7 @@ export async function GET() {
     if (config) {
       if (!config.videoUrl) config.videoUrl = "/video_rifa.mp4";
       if (!config.bannerUrl) config.bannerUrl = "/sorteo_millonario.png";
-      if (config.drawDate === "2024-11-21") config.drawDate = "2024-08-08";
+      if (config.drawDate === "2024-11-21" || config.drawDate === "2024-08-08") config.drawDate = "2026-08-08";
     }
     
     return NextResponse.json(config);

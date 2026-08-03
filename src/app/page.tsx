@@ -13,11 +13,11 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   
   // Configuración del sorteo conectada a la BD
-  const [drawDate, setDrawDate] = useState("2024-11-21");
+  const [drawDate, setDrawDate] = useState("2026-08-08");
   const [lotteryName, setLotteryName] = useState("Lotería de Boyacá");
-  const [prizes, setPrizes] = useState("Ford Ranger XLT Bi-Turbo (2024)");
-  const [videoUrl, setVideoUrl] = useState("");
-  const [bannerUrl, setBannerUrl] = useState("/images/banner.png");
+  const [prizes, setPrizes] = useState("Sorteo Millonario");
+  const [videoUrl, setVideoUrl] = useState("/video_rifa.mp4");
+  const [bannerUrl, setBannerUrl] = useState("/sorteo_millonario.png");
   const [whatsappAdmin, setWhatsappAdmin] = useState("573213349045");
   const [nequiNumber, setNequiNumber] = useState("3228743384");
   const [nequiName, setNequiName] = useState("Jose Surez");
