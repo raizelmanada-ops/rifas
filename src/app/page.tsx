@@ -240,7 +240,16 @@ export default function Home() {
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-accent to-accent-hover"></div>
             
             <div className="relative z-10">
-              <h3 className="text-xl font-bold text-white mb-4 tracking-widest">BOLETA DIGITAL OFICIAL</h3>
+              {bannerUrl ? (
+                <div className="flex justify-center mb-4">
+                  <img src={bannerUrl} alt="Sorteos Millonarios" className="h-16 object-contain" />
+                </div>
+              ) : (
+                <h2 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-b from-[#FFD700] to-[#b38728] uppercase font-serif mb-4">
+                  Sorteos Millonarios
+                </h2>
+              )}
+              <h3 className="text-xl font-bold text-white mb-4 tracking-widest border-b border-white/10 pb-2">BOLETA DIGITAL OFICIAL</h3>
               <div className="text-7xl font-black text-accent tracking-widest mb-6 drop-shadow-[0_0_20px_rgba(255,215,0,0.5)]">
                 {selectedTicket}
               </div>
