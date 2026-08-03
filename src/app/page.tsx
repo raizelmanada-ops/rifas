@@ -219,7 +219,7 @@ export default function Home() {
             <p className="text-sm text-gray-300 mt-1">Llénalo y tendrás 15 minutos para pagarlo antes de que se libere.</p>
           </div>
 
-          <CheckoutForm selectedTicket={selectedTicket!} onSubmit={handleCheckoutSubmit} />
+          <CheckoutForm selectedTicket={selectedTicket!} onBack={() => setStep("grid")} onSuccess={handleCheckoutSubmit} />
         </section>
       )}
 
