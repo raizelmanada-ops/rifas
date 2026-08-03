@@ -255,8 +255,18 @@ export default function Home() {
               </div>
               
               <div className="bg-black/50 p-4 rounded-lg mb-6 border border-white/5">
-                <p className="text-sm font-bold text-accent capitalize tracking-wide">📅 SORTEO: {formattedDate}</p>
-                <p className="text-xs text-gray-400 mt-1 uppercase">Con el premio mayor de la {lotteryName}</p>
+                <p className="text-[10px] text-accent font-bold uppercase tracking-widest mb-1">PARTICIPANDO POR:</p>
+                <p className="text-sm font-bold text-white uppercase tracking-wide mb-3">{prizes}</p>
+                <div className="flex justify-between items-end border-t border-white/10 pt-2">
+                  <div className="text-left">
+                    <p className="text-[9px] text-gray-500 uppercase font-bold">Fecha del Sorteo</p>
+                    <p className="text-xs text-gray-300 font-bold capitalize">{formattedDate}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-[9px] text-gray-500 uppercase font-bold">Sortea Con</p>
+                    <p className="text-xs text-gray-300 font-bold uppercase">{lotteryName}</p>
+                  </div>
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4 text-left border-t border-white/10 pt-6 mt-4">
