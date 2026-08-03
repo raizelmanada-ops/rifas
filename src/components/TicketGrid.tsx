@@ -140,11 +140,43 @@ export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket
         <div className="relative w-full">
           <input 
             type="text" 
+            inputMode="none"
             placeholder="Escribe tu número aquí..." 
             className="input-field w-full text-center text-2xl tracking-widest font-bold h-16"
             value={search}
             onChange={(e) => setSearch(e.target.value.replace(/[^0-9]/g, '').slice(0, 4))}
           />
+        </div>
+
+        {/* Teclado numérico virtual integrado */}
+        <div className="mt-6 grid grid-cols-3 gap-3 max-w-[280px] mx-auto">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
+            <button 
+              key={num}
+              onClick={() => { if (search.length < 4) setSearch(search + num); }}
+              className="bg-white/5 hover:bg-accent hover:text-black text-white font-black text-2xl h-14 rounded-xl border border-white/10 transition-all shadow-md flex justify-center items-center"
+            >
+              {num}
+            </button>
+          ))}
+          <button 
+            onClick={() => setSearch("")}
+            className="bg-danger/20 hover:bg-danger text-white font-bold text-lg h-14 rounded-xl border border-danger/30 transition-all shadow-md flex justify-center items-center"
+          >
+            BORRAR
+          </button>
+          <button 
+            onClick={() => { if (search.length < 4) setSearch(search + "0"); }}
+            className="bg-white/5 hover:bg-accent hover:text-black text-white font-black text-2xl h-14 rounded-xl border border-white/10 transition-all shadow-md flex justify-center items-center"
+          >
+            0
+          </button>
+          <button 
+            onClick={() => setSearch(search.slice(0, -1))}
+            className="bg-warning/20 hover:bg-warning text-white font-bold text-xl h-14 rounded-xl border border-warning/30 transition-all shadow-md flex justify-center items-center"
+          >
+            ⌫
+          </button>
         </div>
       </div>
       
