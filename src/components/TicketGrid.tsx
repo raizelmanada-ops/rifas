@@ -154,14 +154,14 @@ export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket
         </div>
 
         {/* Teclado numérico virtual integrado */}
-        <div className="mt-6 flex flex-wrap justify-center gap-2 max-w-[280px] mx-auto">
+        <div className="mt-6 grid grid-cols-3 gap-2 w-full max-w-[260px] mx-auto">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
             <button 
               key={num}
               type="button"
               onClick={() => { if (search.length < 4) setSearch(search + num); }}
-              style={{ width: '85px', height: '56px', backgroundColor: '#1f2937', color: 'white', borderRadius: '12px', border: '1px solid #374151', fontSize: '24px', fontWeight: '900' }}
-              className="hover:bg-[#FFD700] hover:text-black transition-all shadow-lg flex justify-center items-center"
+              style={{ height: '56px', backgroundColor: '#1f2937', color: 'white', borderRadius: '12px', border: '1px solid #374151', fontSize: '24px', fontWeight: '900' }}
+              className="w-full hover:bg-[#FFD700] hover:text-black transition-all shadow-lg flex justify-center items-center"
             >
               {num}
             </button>
@@ -169,24 +169,24 @@ export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket
           <button 
             type="button"
             onClick={() => setSearch("")}
-            style={{ width: '85px', height: '56px', backgroundColor: '#7f1d1d', color: 'white', borderRadius: '12px', border: '1px solid #991b1b', fontSize: '14px', fontWeight: 'bold' }}
-            className="hover:bg-red-600 transition-all shadow-lg flex justify-center items-center"
+            style={{ height: '56px', backgroundColor: '#7f1d1d', color: 'white', borderRadius: '12px', border: '1px solid #991b1b', fontSize: '14px', fontWeight: 'bold' }}
+            className="w-full hover:bg-red-600 transition-all shadow-lg flex justify-center items-center"
           >
             BORRAR
           </button>
           <button 
             type="button"
             onClick={() => { if (search.length < 4) setSearch(search + "0"); }}
-            style={{ width: '85px', height: '56px', backgroundColor: '#1f2937', color: 'white', borderRadius: '12px', border: '1px solid #374151', fontSize: '24px', fontWeight: '900' }}
-            className="hover:bg-[#FFD700] hover:text-black transition-all shadow-lg flex justify-center items-center"
+            style={{ height: '56px', backgroundColor: '#1f2937', color: 'white', borderRadius: '12px', border: '1px solid #374151', fontSize: '24px', fontWeight: '900' }}
+            className="w-full hover:bg-[#FFD700] hover:text-black transition-all shadow-lg flex justify-center items-center"
           >
             0
           </button>
           <button 
             type="button"
             onClick={() => setSearch(search.slice(0, -1))}
-            style={{ width: '85px', height: '56px', backgroundColor: '#713f12', color: 'white', borderRadius: '12px', border: '1px solid #854d0e', fontSize: '20px', fontWeight: 'bold' }}
-            className="hover:bg-yellow-600 transition-all shadow-lg flex justify-center items-center"
+            style={{ height: '56px', backgroundColor: '#713f12', color: 'white', borderRadius: '12px', border: '1px solid #854d0e', fontSize: '20px', fontWeight: 'bold' }}
+            className="w-full hover:bg-yellow-600 transition-all shadow-lg flex justify-center items-center"
           >
             ⌫
           </button>
