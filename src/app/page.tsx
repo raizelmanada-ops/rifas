@@ -317,10 +317,10 @@ export default function Home() {
           </div>
           
           <div className="bg-black/40 border border-white/5 rounded-xl overflow-hidden hover:border-accent/40 transition-colors shadow-lg">
-            <img src="/images/winner2.jpg" alt="Ganador moto" className="w-full h-48 object-cover object-center" />
+            <img src="/images/winner2.jpg" alt="Ganador carro" className="w-full h-48 object-cover object-center" />
             <div className="p-4 text-center">
-              <p className="text-lg font-bold text-white mb-1 uppercase">Andrés F. - Moto Deportiva</p>
-              <p className="text-[10px] text-accent font-bold uppercase tracking-wider">Entregado en Calle - Septiembre 2024</p>
+              <p className="text-lg font-bold text-white mb-1 uppercase">Andrés F. - Carro 0KM</p>
+              <p className="text-[10px] text-accent font-bold uppercase tracking-wider">Entregado en Casa - Septiembre 2024</p>
             </div>
           </div>
 
