@@ -316,17 +316,17 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-black/40 border border-white/5 rounded-xl overflow-hidden hover:border-accent/40 transition-colors shadow-lg">
-            <img src="/images/winner1.jpg" alt="Ganador moto" className="w-full h-48 object-cover object-center" />
+            <img src="/images/winner1.jpg" alt="Ganadora moto" className="w-full h-48 object-cover object-center" />
             <div className="p-4 text-center">
-              <p className="text-lg font-bold text-white mb-1 uppercase">Camilo T. - Moto 0KM</p>
+              <p className="text-lg font-bold text-white mb-1 uppercase">María G. - Moto 0KM</p>
               <p className="text-[10px] text-accent font-bold uppercase tracking-wider">Entregado en Casa - Octubre 2024</p>
             </div>
           </div>
           
           <div className="bg-black/40 border border-white/5 rounded-xl overflow-hidden hover:border-accent/40 transition-colors shadow-lg">
-            <img src="/images/winner2.jpg" alt="Ganador carro" className="w-full h-48 object-cover object-center" />
+            <img src="/images/winner2.jpg" alt="Ganadora carro" className="w-full h-48 object-cover object-center" />
             <div className="p-4 text-center">
-              <p className="text-lg font-bold text-white mb-1 uppercase">Andrés F. - Carro 0KM</p>
+              <p className="text-lg font-bold text-white mb-1 uppercase">Andrea V. - Carro 0KM</p>
               <p className="text-[10px] text-accent font-bold uppercase tracking-wider">Entregado en Casa - Septiembre 2024</p>
             </div>
           </div>
