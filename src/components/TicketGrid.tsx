@@ -2,7 +2,14 @@
 
 import { useState, useEffect, useMemo } from "react";
 
-const fakeNames = ["Carlos V.", "María G.", "Andrés F.", "Diana R.", "Juan P.", "Laura M.", "Diego A.", "Paola S.", "Camilo T.", "Valentina B.", "José L.", "Ana M.", "Felipe C.", "Luisa P."];
+const fakeNames = [
+  "Carlos M.", "Ana G.", "Luis F.", "María R.", "Jorge T.", "Elena V.", "Pedro S.", "Lucía C.", "Andrés P.", "Diana M.",
+  "José L.", "Laura B.", "Camilo H.", "Valentina J.", "Felipe O.", "Isabella N.", "David Q.", "Sofía D.", "Santiago Z.", "Camila Y.",
+  "Diego W.", "Mariana X.", "Juan E.", "Daniela U.", "Mateo K.", "Juliana A.", "Alejandro I.", "Valeria E.", "Sebastián O.", "Natalia C.",
+  "Gabriel G.", "Carolina V.", "Nicolás H.", "Andrea B.", "Martín M.", "Paula J.", "Samuel P.", "Gabriela S.", "Julián R.", "Manuela T.",
+  "Emilio F.", "Luisa L.", "Simón D.", "Victoria Z.", "Tomás Q.", "Catalina N.", "Jerónimo X.", "Isabel W.", "Matías U.", "Antonia K.",
+  "Hernán P.", "Mónica V.", "Alberto M.", "Gloria S.", "Esteban R.", "Silvia G.", "Javier C.", "Marta H.", "Ricardo L.", "Lorena B."
+];
 
 export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket: string) => void }) {
   const [search, setSearch] = useState("");
@@ -21,7 +28,7 @@ export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket
         // 2. Generar algunos falsos para rellenar (marketing)
         const fakeOccupied: Record<string, string> = { ...realData }; // Empezamos con los reales
         
-        const fakeNames = ["Carlos M.", "Ana G.", "Luis F.", "María R.", "Jorge T.", "Elena V.", "Pedro S.", "Lucía C.", "Andrés P.", "Diana M."];
+
         
         // Agregar unos 1000 falsos para dar volumen, pero SIN PISAR los reales
         let addedFake = 0;
@@ -75,7 +82,7 @@ export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket
           if (freeNumbersInView.length > 0) {
             // Elegir uno al azar y "comprarlo"
             const luckyNum = freeNumbersInView[Math.floor(Math.random() * freeNumbersInView.length)];
-            const fakeNames = ["Carlos M.", "Ana G.", "Luis F.", "María R.", "Jorge T.", "Elena V.", "Pedro S.", "Lucía C.", "Andrés P.", "Diana M."];
+
             const buyer = fakeNames[Math.floor(Math.random() * fakeNames.length)];
             
             const newOccupied = { ...prevOccupied };
