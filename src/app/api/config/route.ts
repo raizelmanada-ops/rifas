@@ -20,6 +20,14 @@ export async function GET() {
         }
       });
     }
+    
+    // Forzar valores por defecto si la base de datos está vacía para estos campos
+    if (config) {
+      if (!config.videoUrl) config.videoUrl = "/video_rifa.mp4";
+      if (!config.bannerUrl) config.bannerUrl = "/sorteo_millonario.png";
+      if (config.drawDate === "2024-11-21") config.drawDate = "2024-08-08";
+    }
+    
     return NextResponse.json(config);
   } catch (error) {
     console.error("Error fetching config:", error);
