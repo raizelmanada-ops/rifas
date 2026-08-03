@@ -257,6 +257,11 @@ export default function Home() {
               <div className="bg-black/50 p-4 rounded-lg mb-6 border border-white/5">
                 <p className="text-[10px] text-accent font-bold uppercase tracking-widest mb-1">PARTICIPANDO POR:</p>
                 <p className="text-sm font-bold text-white uppercase tracking-wide mb-3">{prizes}</p>
+                
+                <div className="w-full mb-4 rounded-lg overflow-hidden border border-white/10">
+                  <img src="/sorteo_millonario.png" alt="Premio del Sorteo" className="w-full h-auto object-contain" />
+                </div>
+
                 <div className="flex justify-between items-end border-t border-white/10 pt-2">
                   <div className="text-left">
                     <p className="text-[9px] text-gray-500 uppercase font-bold">Fecha del Sorteo</p>
