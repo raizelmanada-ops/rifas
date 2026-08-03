@@ -22,6 +22,7 @@ export default function Home() {
   const [nequiNumber, setNequiNumber] = useState("3228743384");
   const [nequiName, setNequiName] = useState("Jose Surez");
   const [qrUrl, setQrUrl] = useState("");
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     fetch('/api/config')
@@ -142,17 +143,39 @@ export default function Home() {
                       allowFullScreen
                     ></iframe>
                   ) : (
-                    <video 
-                      src={videoUrl} 
-                      className="w-full h-full object-cover" 
-                      controls 
-                      autoPlay 
-                      muted 
-                      loop 
-                      playsInline
-                    >
-                      Tu navegador no soporta videos.
-                    </video>
+                    <div className="relative w-full h-full">
+                      <video 
+                        id="main-promo-video"
+                        src={videoUrl} 
+                        className="w-full h-full object-cover" 
+                        controls 
+                        autoPlay 
+                        muted={isMuted} 
+                        loop 
+                        playsInline
+                      >
+                        Tu navegador no soporta videos.
+                      </video>
+                      
+                      {isMuted && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/40 z-20 pointer-events-none">
+                          <button 
+                            type="button"
+                            onClick={() => {
+                              setIsMuted(false);
+                              const vid = document.getElementById('main-promo-video') as HTMLVideoElement;
+                              if (vid) vid.muted = false;
+                            }}
+                            className="pointer-events-auto bg-[#FFD700] hover:bg-yellow-400 text-black font-black text-sm md:text-lg px-6 py-3 rounded-full flex items-center gap-3 shadow-[0_0_30px_rgba(255,215,0,0.8)] animate-bounce border-2 border-white"
+                          >
+                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clipRule="evenodd" />
+                            </svg>
+                            ¡TOCA AQUÍ PARA ESCUCHAR!
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   )
                 ) : (
                   <div className="absolute inset-0 flex flex-col items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity cursor-pointer bg-black/40">
