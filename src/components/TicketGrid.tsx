@@ -154,7 +154,16 @@ export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket
         </div>
 
         {/* Teclado numérico virtual integrado */}
-        <div className="mt-6 grid grid-cols-3 gap-2 w-full max-w-[220px] mx-auto">
+        <div 
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(3, 1fr)', 
+            gap: '8px', 
+            width: '100%', 
+            maxWidth: '240px', 
+            margin: '1.5rem auto' 
+          }}
+        >
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
             <button 
               key={num}
