@@ -1,11 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [activeTab, setActiveTab] = useState<"ventas" | "configuracion">("ventas");
+
+  const [config, setConfig] = useState<any>({
+    drawDate: "",
+    lotteryName: "",
+    prizes: "",
+    videoUrl: "",
+    bannerUrl: "",
+    whatsappAdmin: "",
+    nequiNumber: "",
+    nequiName: "",
+    qrUrl: ""
+  });
+
+  useEffect(() => {
+    fetch("/api/config").then(res => res.json()).then(data => {
+      if(data) setConfig(data);
+    }).catch(e => console.error(e));
+  }, []);
+
+  const handleSaveConfig = async () => {
+    try {
+      await fetch("/api/config", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(config)
+      });
+      alert("Configuración guardada");
+    } catch(e) {
+      alert("Error al guardar configuración");
+    }
+  };
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
