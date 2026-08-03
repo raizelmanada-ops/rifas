@@ -24,7 +24,8 @@ export async function GET() {
     // Forzar valores por defecto si la base de datos está vacía para estos campos
     if (config) {
       if (!config.videoUrl) config.videoUrl = "/video_rifa.mp4";
-      if (!config.bannerUrl) config.bannerUrl = "/sorteo_millonario.png";
+      // Dejamos bannerUrl vacío para que muestre el texto "Sorteos Millonarios" de forma nativa
+      if (!config.bannerUrl) config.bannerUrl = "";
       if (config.drawDate === "2024-11-21" || config.drawDate === "2024-08-08") config.drawDate = "2026-08-08";
     }
     

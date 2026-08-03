@@ -17,7 +17,7 @@ export default function Home() {
   const [lotteryName, setLotteryName] = useState("Lotería de Boyacá");
   const [prizes, setPrizes] = useState("Sorteo Millonario");
   const [videoUrl, setVideoUrl] = useState("/video_rifa.mp4");
-  const [bannerUrl, setBannerUrl] = useState("/sorteo_millonario.png");
+  const [bannerUrl, setBannerUrl] = useState("");
   const [whatsappAdmin, setWhatsappAdmin] = useState("573213349045");
   const [nequiNumber, setNequiNumber] = useState("3228743384");
   const [nequiName, setNequiName] = useState("Jose Surez");

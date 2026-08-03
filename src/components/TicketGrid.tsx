@@ -205,7 +205,7 @@ export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket
           </div>
         </div>
 
-        <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-10 gap-2">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-2 md:gap-3">
           {visibleGrid.map(num => {
             const isOccupied = occupiedTickets[num];
             return (
@@ -218,22 +218,21 @@ export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket
                   color: isOccupied ? '#9ca3af' : '#000000',
                   borderColor: isOccupied ? '#ff3333' : '#00ff66'
                 }}
-                className={`ticket-btn relative overflow-hidden transition-all duration-300 h-16 rounded-md border flex flex-col items-center justify-center ${
+                className={`ticket-btn relative overflow-hidden transition-all duration-300 h-16 sm:h-20 rounded-lg border flex flex-col items-center justify-center ${
                   isOccupied 
                   ? 'cursor-not-allowed opacity-60' 
-                  : 'hover:scale-110 shadow-[0_0_15px_rgba(0,255,102,0.6)] animate-pulse'
+                  : 'hover:scale-105 shadow-[0_0_10px_rgba(0,255,102,0.4)]'
                 }`}
               >
-                <span className="text-xl font-black leading-none">{num}</span>
+                <span className="text-lg sm:text-2xl font-black leading-none">{num}</span>
                 {!isOccupied && (
-                  <span className="text-[9px] uppercase font-bold tracking-widest mt-1 opacity-80">
+                  <span className="text-[9px] sm:text-[11px] uppercase font-bold tracking-widest mt-1 opacity-90">
                     Libre
                   </span>
                 )}
                 {isOccupied && (
-                  <span className="absolute inset-0 flex flex-col items-center justify-center bg-[#ff3333]/90 text-white text-[10px] font-black leading-tight z-10">
-                    <span className="line-through opacity-60 text-xs mb-0.5">{num}</span>
-                    <span>{isOccupied.substring(0, 8)}</span>
+                  <span className="text-[8px] sm:text-[10px] uppercase tracking-wider mt-0.5 opacity-70 px-1 text-center leading-tight truncate w-full">
+                    {isOccupied}
                   </span>
                 )}
               </button>
