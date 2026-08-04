@@ -230,6 +230,40 @@ export default function Home() {
                 <div className="text-[10px] text-gray-500 uppercase">Segundos</div>
               </div>
             </div>
+
+            {/* SELLOS DE CONFIANZA */}
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 z-10 relative">
+              <div className="bg-black/60 border border-success/30 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-[0_0_15px_rgba(0,255,0,0.1)] hover:border-success/60 transition-colors">
+                <div className="w-12 h-12 bg-success/20 rounded-full flex items-center justify-center mb-3">
+                  <svg className="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                  </svg>
+                </div>
+                <h4 className="text-white font-bold text-sm uppercase mb-1">Transacción 100% Segura</h4>
+                <p className="text-xs text-gray-400">Tus pagos son verificados y protegidos mediante Nequi Colombia.</p>
+              </div>
+
+              <div className="bg-black/60 border border-accent/30 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-[0_0_15px_rgba(255,215,0,0.1)] hover:border-accent/60 transition-colors">
+                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mb-3">
+                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
+                </div>
+                <h4 className="text-white font-bold text-sm uppercase mb-1">Entrega Notariada</h4>
+                <p className="text-xs text-gray-400">Traspaso legal y entrega a nivel nacional directamente a tu nombre.</p>
+              </div>
+
+              <div className="bg-black/60 border border-[#00d2ff]/30 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-[0_0_15px_rgba(0,210,255,0.1)] hover:border-[#00d2ff]/60 transition-colors">
+                <div className="w-12 h-12 bg-[#00d2ff]/20 rounded-full flex items-center justify-center mb-3">
+                  <svg className="w-6 h-6 text-[#00d2ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                  </svg>
+                </div>
+                <h4 className="text-white font-bold text-sm uppercase mb-1">Sorteo Transparente</h4>
+                <p className="text-xs text-gray-400">Ganador elegido mediante el premio mayor de la lotería oficial.</p>
+              </div>
+            </div>
           </div>
           
           <div id="grid-section" className="scroll-mt-10">
