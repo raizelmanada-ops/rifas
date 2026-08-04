@@ -298,7 +298,6 @@ export default function Home() {
                 <p className="text-xs text-gray-400">Ganador elegido mediante el premio mayor de la lotería oficial.</p>
               </div>
             </div>
-            </div>
           </div>
           
           {/* ASISTENTE VIRTUAL */}
