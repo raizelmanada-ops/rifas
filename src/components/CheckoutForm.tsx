@@ -84,7 +84,7 @@ export default function CheckoutForm({ selectedTicket, onBack, onSuccess }: Chec
         
         <div className="bg-warning/10 border border-warning/30 rounded-lg p-4 mt-2">
           <p className="text-sm text-warning font-bold">¡Atención!</p>
-          <p className="text-xs text-gray-300 mt-1">Al hacer clic en continuar, tendrás 15 minutos para realizar tu pago 100% seguro por Hotmart, de lo contrario el número se liberará automáticamente.</p>
+          <p className="text-xs text-gray-300 mt-1">Al hacer clic en continuar, tendrás 15 minutos para realizar tu pago 100% seguro a través de nuestra pasarela autorizada, de lo contrario el número se liberará automáticamente.</p>
         </div>
         
         <div className="flex gap-4 mt-4">

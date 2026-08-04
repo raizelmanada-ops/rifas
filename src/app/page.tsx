@@ -455,7 +455,7 @@ export default function Home() {
           
           <div className="mb-6 text-gray-300 space-y-2 text-sm text-center bg-black/40 p-4 rounded-xl border border-white/5 shadow-inner">
             <p>
-              Realiza tu pago 100% seguro a través de Hotmart (Tarjetas, PSE, Efecty).
+              Realiza tu pago 100% seguro a través de nuestra pasarela autorizada (Tarjetas, PSE, Efecty).
             </p>
             <p className="font-bold text-accent">
               ¡Tu boleta quedará reservada automáticamente al completar el pago!
