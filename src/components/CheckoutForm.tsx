@@ -23,10 +23,6 @@ export default function CheckoutForm({ selectedTicket, onBack, onSuccess }: Chec
     // Simulate API call to reserve the ticket
     setTimeout(() => {
       setLoading(false);
-      // Track event
-      if (typeof window !== 'undefined' && (window as any).fbq) {
-        (window as any).fbq('track', 'InitiateCheckout');
-      }
       onSuccess({ ...formData, ticketNumber: selectedTicket });
     }, 1500);
   };

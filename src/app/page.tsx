@@ -344,11 +344,6 @@ export default function Home() {
           <a 
             href={`https://wa.me/${whatsappAdmin}?text=Hola,%20acabo%20de%20reservar%20el%20número%20${selectedTicket}.%20Mi%20nombre%20es%20${userData?.name}%20con%20cédula%20${userData?.idNumber}.%20Quiero%20reportar%20mi%20pago%20a%20Nequi.`}
             target="_blank"
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).fbq) {
-                (window as any).fbq('track', 'Purchase');
-              }
-            }}
             className="w-full btn btn-primary flex items-center justify-center gap-2 text-lg h-16 shadow-[0_0_20px_rgba(255,215,0,0.3)]"
           >
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
