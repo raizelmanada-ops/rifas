@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import TicketGrid from "@/components/TicketGrid";
 import CheckoutForm from "@/components/CheckoutForm";
@@ -23,6 +23,20 @@ export default function Home() {
   const [nequiName, setNequiName] = useState("Jose Surez");
   const [qrUrl, setQrUrl] = useState("");
   const [isMuted, setIsMuted] = useState(true);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (isPlayingAudio) {
+        audioRef.current.pause();
+        setIsPlayingAudio(false);
+      } else {
+        audioRef.current.play();
+        setIsPlayingAudio(true);
+      }
+    }
+  };
 
   useEffect(() => {
     fetch('/api/config')
@@ -282,6 +296,67 @@ export default function Home() {
                 </div>
                 <h4 className="text-white font-bold text-sm uppercase mb-1">Sorteo Transparente</h4>
                 <p className="text-xs text-gray-400">Ganador elegido mediante el premio mayor de la lotería oficial.</p>
+              </div>
+            </div>
+            </div>
+          </div>
+          
+          {/* ASISTENTE VIRTUAL */}
+          <div className="w-full max-w-4xl mx-auto mb-10 z-10 relative">
+            <div className="glass-panel border-[#00d2ff]/30 p-6 shadow-[0_0_20px_rgba(0,210,255,0.15)] bg-[#0f1525]/80">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-left">
+                {/* Avatar */}
+                <div className="flex flex-col items-center flex-shrink-0">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#00d2ff] to-[#3a86ff] p-1 shadow-[0_0_15px_rgba(0,210,255,0.5)]">
+                    <div className="w-full h-full rounded-full bg-[#0a0a0a] flex items-center justify-center text-4xl">
+                      👩🏼‍💼
+                    </div>
+                  </div>
+                  <p className="text-[#00d2ff] font-bold text-xs mt-2 uppercase tracking-widest text-center">Asistente<br/>Virtual</p>
+                </div>
+                
+                {/* Mensaje */}
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3">¿Cómo apartar tu cupo en 3 simples pasos?</h3>
+                  
+                  <div className="space-y-3 mb-6 text-gray-300 text-sm md:text-base">
+                    <p><strong className="text-white">Paso 1:</strong> Desliza hacia abajo para elegir tu número de la suerte. Puedes usar el teclado en pantalla para buscarlo, o tocar cualquiera de los números verdes libres. Llena tus datos para apartarlo.</p>
+                    <p><strong className="text-white">Paso 2:</strong> Realiza tu pago por Nequi al número oficial. Luego dale clic al botón verde para enviarnos la foto del comprobante a nuestro WhatsApp.</p>
+                    <p><strong className="text-white">Paso 3:</strong> ¡Revisa tu celular! Una vez confirmemos el pago, te enviaremos de inmediato tu Boleta Digital Oficial notariada.</p>
+                  </div>
+                  
+                  {/* Botón de Audio */}
+                  <div className="flex justify-center md:justify-start">
+                    <audio 
+                      ref={audioRef} 
+                      src="/audio_rifa.ogg" 
+                      onEnded={() => setIsPlayingAudio(false)}
+                      onPause={() => setIsPlayingAudio(false)}
+                      onPlay={() => setIsPlayingAudio(true)}
+                      className="hidden" 
+                    />
+                    <button 
+                      onClick={toggleAudio}
+                      className={`flex items-center gap-3 px-6 py-3 rounded-full font-black text-sm uppercase tracking-widest transition-all ${
+                        isPlayingAudio 
+                          ? "bg-danger text-white shadow-[0_0_15px_rgba(255,51,51,0.6)] animate-pulse" 
+                          : "bg-[#00d2ff] text-black shadow-[0_0_20px_rgba(0,210,255,0.6)] hover:bg-[#3a86ff] hover:text-white"
+                      }`}
+                    >
+                      {isPlayingAudio ? (
+                        <>
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 002 0V8a1 1 0 00-1-1zm4 0a1 1 0 00-1 1v4a1 1 0 002 0V8a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+                          PAUSAR AUDIO
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>
+                          ESCUCHAR INSTRUCCIONES
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
