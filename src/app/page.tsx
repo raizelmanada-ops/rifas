@@ -316,13 +316,7 @@ export default function Home() {
                 
                 {/* Mensaje */}
                 <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3">¿Cómo apartar tu cupo en 3 simples pasos?</h3>
-                  
-                  <div className="space-y-3 mb-6 text-gray-300 text-sm md:text-base">
-                    <p><strong className="text-white">Paso 1:</strong> Desliza hacia abajo para elegir tu número de la suerte. Puedes usar el teclado en pantalla para buscarlo, o tocar cualquiera de los números verdes libres. Llena tus datos para apartarlo.</p>
-                    <p><strong className="text-white">Paso 2:</strong> Realiza tu pago por Nequi al número oficial. Luego dale clic al botón verde para enviarnos la foto del comprobante a nuestro WhatsApp.</p>
-                    <p><strong className="text-white">Paso 3:</strong> ¡Revisa tu celular! Una vez confirmemos el pago, te enviaremos de inmediato tu Boleta Digital Oficial notariada.</p>
-                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4">¿Cómo apartar tu cupo en 3 simples pasos?</h3>
                   
                   {/* Botón de Audio */}
                   <div className="flex justify-center md:justify-start">
