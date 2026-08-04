@@ -86,8 +86,10 @@ export default function Home() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          number: selectedTicket,
-          customerData: data
+          ticketNumber: selectedTicket,
+          name: data.name,
+          phone: data.phone,
+          idNumber: data.idNumber
         })
       });
     } catch (error) {

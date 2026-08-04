@@ -18,12 +18,50 @@ export default function AdminDashboard() {
     nequiName: "",
     qrUrl: ""
   });
+  
+  const [reservations, setReservations] = useState<any[]>([]);
+
+  const fetchReservations = async () => {
+    try {
+      const res = await fetch("/api/admin/reservations");
+      const data = await res.json();
+      if(Array.isArray(data)) setReservations(data);
+    } catch(e) {
+      console.error(e);
+    }
+  };
 
   useEffect(() => {
     fetch("/api/config").then(res => res.json()).then(data => {
       if(data) setConfig(data);
     }).catch(e => console.error(e));
+    
+    fetchReservations();
   }, []);
+
+  const handleUpdateStatus = async (id: string, status: string) => {
+    try {
+      await fetch(`/api/admin/reservations/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status })
+      });
+      fetchReservations();
+    } catch(e) {
+      alert("Error al actualizar");
+    }
+  };
+
+  const handleRelease = async (id: string) => {
+    if(confirm("¿Estás seguro de liberar esta boleta?")) {
+      try {
+        await fetch(`/api/admin/reservations/${id}`, { method: 'DELETE' });
+        fetchReservations();
+      } catch(e) {
+        alert("Error al liberar");
+      }
+    }
+  };
 
   const handleSaveConfig = async () => {
     try {
@@ -78,15 +116,11 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <div className="glass-panel p-4 flex flex-col items-center justify-center">
           <p className="text-gray-400 text-sm">Boletas Vendidas</p>
-          <p className="text-3xl font-bold text-white mt-2">142</p>
-        </div>
-        <div className="glass-panel p-4 flex flex-col items-center justify-center">
-          <p className="text-gray-400 text-sm">Ingresos Nequi (Aprox)</p>
-          <p className="text-3xl font-bold text-success mt-2">$8.520.000</p>
+          <p className="text-3xl font-bold text-white mt-2">{reservations.filter(r => r.status === 'PAID').length}</p>
         </div>
         <div className="glass-panel p-4 flex flex-col items-center justify-center">
           <p className="text-gray-400 text-sm">Reservas Pendientes</p>
-          <p className="text-3xl font-bold text-warning mt-2">15</p>
+          <p className="text-3xl font-bold text-warning mt-2">{reservations.filter(r => r.status === 'RESERVED').length}</p>
         </div>
         <div className="glass-panel p-4 flex flex-col items-center justify-center">
           <p className="text-gray-400 text-sm">Porcentaje Vendido</p>
@@ -124,26 +158,29 @@ export default function AdminDashboard() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-white/5">
-                  <td className="py-4 font-bold text-accent">#0292</td>
-                  <td className="py-4">Juan Pérez</td>
-                  <td className="py-4">300 123 4567</td>
-                  <td className="py-4">1045678901</td>
-                  <td className="py-4"><span className="bg-warning/20 text-warning px-2 py-1 rounded text-xs font-bold">Por Confirmar</span></td>
-                  <td className="py-4">
-                    <button className="bg-success text-black px-3 py-1 rounded text-sm font-bold">Marcar Pagado</button>
-                  </td>
-                </tr>
-                <tr className="border-b border-white/5">
-                  <td className="py-4 font-bold text-accent">#4582</td>
-                  <td className="py-4">María Gómez</td>
-                  <td className="py-4">310 987 6543</td>
-                  <td className="py-4">32165498</td>
-                  <td className="py-4"><span className="bg-success/20 text-success px-2 py-1 rounded text-xs font-bold">Pagado</span></td>
-                  <td className="py-4">
-                    <button className="bg-gray-700 text-gray-300 px-3 py-1 rounded text-sm disabled">Completado</button>
-                  </td>
-                </tr>
+                {reservations.length === 0 ? (
+                  <tr><td colSpan={6} className="py-4 text-center text-gray-500">No hay reservas aún</td></tr>
+                ) : reservations.filter(r => r.status !== 'LIBERADO').map((res) => (
+                  <tr key={res.id} className="border-b border-white/5">
+                    <td className="py-4 font-bold text-accent">#{res.number}</td>
+                    <td className="py-4">{res.customer?.name}</td>
+                    <td className="py-4">{res.customer?.phone}</td>
+                    <td className="py-4">{res.customer?.idNumber}</td>
+                    <td className="py-4">
+                      {res.status === 'PAID' ? (
+                        <span className="bg-success/20 text-success px-2 py-1 rounded text-xs font-bold">Pagado</span>
+                      ) : (
+                        <span className="bg-warning/20 text-warning px-2 py-1 rounded text-xs font-bold">Pendiente</span>
+                      )}
+                    </td>
+                    <td className="py-4 flex gap-2">
+                      {res.status !== 'PAID' && (
+                        <button onClick={() => handleUpdateStatus(res.id, 'PAID')} className="bg-success text-black px-3 py-1 rounded text-sm font-bold hover:bg-green-500">Aprobar</button>
+                      )}
+                      <button onClick={() => handleRelease(res.id)} className="bg-danger text-white px-3 py-1 rounded text-sm font-bold hover:bg-red-700">Liberar</button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
