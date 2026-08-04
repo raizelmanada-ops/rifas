@@ -32,6 +32,11 @@ export default function Home() {
         audioRef.current.pause();
         setIsPlayingAudio(false);
       } else {
+        // Silenciar el video principal automáticamente
+        setIsMuted(true);
+        const vid = document.getElementById('main-promo-video') as HTMLVideoElement;
+        if (vid) vid.muted = true;
+        
         audioRef.current.play();
         setIsPlayingAudio(true);
       }
