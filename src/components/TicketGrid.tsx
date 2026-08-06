@@ -177,14 +177,33 @@ export default function TicketGrid({ onSelectTicket }: { onSelectTicket: (ticket
         {/* Máquina de la suerte */}
         <div className="mb-6 w-full box-border">
           <p className="text-[10px] text-gray-400 uppercase font-bold tracking-widest text-center mb-1">Máquina de la Suerte (Combos)</p>
-          <p className="text-success text-[10px] font-black text-center mb-3 uppercase">
-            🎁 ¡Bonos de descuento aplicados!
+          <p className="text-success text-xs font-black text-center mb-4 uppercase animate-pulse">
+            🎁 ¡Elige un Combo y ahorra!
           </p>
-          <div className="flex flex-wrap justify-center gap-2 w-full">
-            <button onClick={() => selectRandom(1)} className="p-2 font-black rounded-lg border border-white/20 bg-black/50 text-white flex-1 hover:bg-[#FFD700] hover:text-black transition-all">+1</button>
-            <button onClick={() => selectRandom(2)} className="p-2 font-black rounded-lg border border-white/20 bg-black/50 text-white flex-1 hover:bg-[#FFD700] hover:text-black transition-all">+2</button>
-            <button onClick={() => selectRandom(3)} className="p-2 font-black rounded-lg border border-white/20 bg-black/50 text-white flex-1 hover:bg-[#FFD700] hover:text-black transition-all">+3</button>
-            <button onClick={() => selectRandom(5)} className="p-2 font-black rounded-lg border border-success bg-success text-black flex-1 hover:bg-green-400 transition-all">+5</button>
+          
+          <div className="grid grid-cols-2 gap-3 w-full">
+            <button onClick={() => selectRandom(1)} className="p-3 font-black rounded-xl border border-white/20 bg-black/50 text-white hover:bg-[#FFD700] hover:text-black transition-all shadow-md flex flex-col items-center justify-center">
+              <span className="text-xl">+1 Boleto</span>
+              <span className="text-sm font-normal opacity-80 mt-1">$60.000 COP</span>
+            </button>
+            
+            <button onClick={() => selectRandom(2)} className="p-3 font-black rounded-xl border border-white/20 bg-black/50 text-white hover:bg-[#FFD700] hover:text-black transition-all shadow-md flex flex-col items-center justify-center">
+              <span className="text-xl">+2 Boletos</span>
+              <span className="text-sm font-normal opacity-80 mt-1">$110.000 COP</span>
+              <span className="text-[10px] text-green-400 font-bold mt-0.5">(Ahorras 10k)</span>
+            </button>
+            
+            <button onClick={() => selectRandom(3)} className="p-3 font-black rounded-xl border border-[#FFD700]/50 bg-black/50 text-white hover:bg-[#FFD700] hover:text-black transition-all shadow-md flex flex-col items-center justify-center relative overflow-hidden">
+              <span className="text-xl">+3 Boletos</span>
+              <span className="text-sm font-normal opacity-80 mt-1">$150.000 COP</span>
+              <span className="text-[10px] text-[#FFD700] font-bold mt-0.5">(Ahorras 30k)</span>
+            </button>
+            
+            <button onClick={() => selectRandom(5)} className="p-3 font-black rounded-xl border-2 border-success bg-success/10 text-white hover:bg-success hover:text-black transition-all shadow-[0_0_15px_rgba(0,255,102,0.2)] flex flex-col items-center justify-center">
+              <span className="text-xl">+5 Boletos</span>
+              <span className="text-sm font-normal opacity-90 mt-1">$250.000 COP</span>
+              <span className="text-[10px] text-success font-black mt-0.5">(¡Llevas 5, pagas 4!)</span>
+            </button>
           </div>
         </div>
 
