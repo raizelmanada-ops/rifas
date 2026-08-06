@@ -9,6 +9,7 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState({ days: 3, hours: 14, minutes: 22, seconds: 59 });
   const [step, setStep] = useState<"grid" | "checkout" | "ticket">("grid");
   const [selectedTicket, setSelectedTicket] = useState<string | null>(null);
+  const [totalPrice, setTotalPrice] = useState<number>(60000);
   const [userData, setUserData] = useState<any>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   
@@ -90,8 +91,9 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [drawDate]);
 
-  const handleTicketSelect = (ticket: string) => {
+  const handleTicketSelect = (ticket: string, price: number) => {
     setSelectedTicket(ticket);
+    setTotalPrice(price);
     setStep("checkout");
   };
 
@@ -448,7 +450,7 @@ export default function Home() {
                       TRANSFERENCIA NEQUI
                     </p>
                     <p className="text-white text-sm mb-1">Total a Pagar:</p>
-                    <p className="text-3xl font-black text-[#ff00a5] drop-shadow-md mb-2">$60.000 <span className="text-sm">COP</span></p>
+                    <p className="text-3xl font-black text-[#ff00a5] drop-shadow-md mb-2">${totalPrice.toLocaleString('es-CO')} <span className="text-sm">COP</span></p>
                     <div className="bg-black/40 rounded p-2 border border-white/10 mb-2">
                       <p className="text-xs text-gray-400 uppercase font-bold">Número de Nequi</p>
                       <p className="text-xl font-bold text-white tracking-widest">{nequiNumber}</p>
@@ -476,7 +478,7 @@ export default function Home() {
           </div>
           
           <a 
-            href={`https://wa.me/${whatsappAdmin}?text=Hola,%20acabo%20de%20reservar%20la%20boleta%20${selectedTicket}%20a%20nombre%20de%20${userData?.name}%20(CC:%20${userData?.idNumber}).%20Aquí%20está%20mi%20comprobante%20de%20pago%20de%20los%20$60.000%20COP.`}
+            href={`https://wa.me/${whatsappAdmin}?text=Hola,%20acabo%20de%20reservar%20${selectedTicket}%20a%20nombre%20de%20${userData?.name}%20(CC:%20${userData?.idNumber}).%20Aquí%20está%20mi%20comprobante%20de%20pago%20por%20$${totalPrice.toLocaleString('es-CO')}%20COP.`}
             target="_blank"
             rel="noreferrer"
             onClick={() => {
