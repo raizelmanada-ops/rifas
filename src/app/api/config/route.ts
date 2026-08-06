@@ -13,7 +13,7 @@ export async function GET() {
           videoUrl: "",
           bannerUrl: "",
           qrUrl: "",
-          prizes: "Ford Ranger XLT Bi-Turbo (2024)",
+          prizes: "Selección Colombia",
           whatsappAdmin: "573228743384",
           nequiNumber: "3228743384",
           nequiName: "Jose Surez"
@@ -65,7 +65,7 @@ export async function POST(req: Request) {
           videoUrl: data.videoUrl || "",
           bannerUrl: data.bannerUrl || "",
           qrUrl: data.qrUrl || "",
-          prizes: data.prizes || "Ford Ranger XLT Bi-Turbo (2024)",
+          prizes: data.prizes || "Selección Colombia",
           whatsappAdmin: data.whatsappAdmin || "573228743384",
           nequiNumber: data.nequiNumber || "3228743384",
           nequiName: data.nequiName || "Jose Surez"
