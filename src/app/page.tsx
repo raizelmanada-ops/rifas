@@ -95,11 +95,13 @@ export default function Home() {
     setSelectedTicket(ticket);
     setTotalPrice(price);
     setStep("checkout");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleCheckoutSubmit = async (data: any) => {
     setUserData(data);
     setStep("ticket");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     // Guardar en la base de datos real
     try {
