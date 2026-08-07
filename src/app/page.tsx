@@ -500,7 +500,86 @@ export default function Home() {
         </section>
       )}
 
+      {/* SECCIÓN DE CONFIANZA Y LEGALIDAD (TIPO MÉXICO) */}
+      <section className="w-full max-w-4xl px-4 mt-12 mb-8">
+        <div className="bg-gradient-to-br from-[#111] to-[#1a1a1a] rounded-3xl p-8 border border-white/10 shadow-2xl relative overflow-hidden">
+          
+          {/* Sello de Garantía Flotante */}
+          <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,215,0,0.3)] opacity-20 blur-xl"></div>
+          
+          <h2 className="text-3xl font-black text-center mb-8 uppercase tracking-wider">
+            ¿Por qué confiar en <span className="text-accent">Sorteos Millonarios?</span>
+          </h2>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* Columna 1: Legalidad */}
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/10">
+                  <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">100% Legal y Transparente</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Nuestro sorteo se rige estrictamente por los resultados del <strong className="text-white">Premio Mayor de la Lotería de Medellín</strong>. No hay manipulación, el azar decide frente a todo el país.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 border border-white/10">
+                  <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Traspaso Totalmente Pago</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Te entregamos la Camioneta y la Moto con <strong className="text-white">matrícula al día, SOAT, Técnico Mecánica y gastos de traspaso notarial pagos</strong>. ¡No sacas un peso de tu bolsillo!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Columna 2: Los Premios (Ficha Técnica) */}
+            <div className="bg-black/50 p-6 rounded-2xl border border-white/5">
+              <h3 className="text-accent font-black uppercase mb-4 text-center tracking-wider">🔥 El Gran Combo Ganador</h3>
+              
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <span className="text-2xl">🚙</span>
+                  <div>
+                    <p className="font-bold text-white">Espectacular Camioneta (Toyota)</p>
+                    <p className="text-xs text-gray-500">Cero Kilómetros, lista para estrenar. Tracción para cualquier terreno.</p>
+                  </div>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-2xl">🏍️</span>
+                  <div>
+                    <p className="font-bold text-white">Moto AKT Flex 125 (Modelo 2027)</p>
+                    <p className="text-xs text-gray-500">Agilidad, economía y diseño moderno. Totalmente nueva.</p>
+                  </div>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-2xl">🚛</span>
+                  <div>
+                    <p className="font-bold text-white">Entrega Nacional Gratuita</p>
+                    <p className="text-xs text-gray-500">Si ganas y estás fuera de nuestra ciudad, te lo llevamos hasta la puerta de tu casa.</p>
+                  </div>
+                </li>
+              </ul>
+              
+              <div className="mt-6 pt-4 border-t border-white/10 text-center">
+                <p className="text-xs text-gray-400 italic">"Una oportunidad real de cambiar tu vida por lo que cuesta un almuerzo."</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* FAQ ACCORDION SECTION */}
       <footer className="w-full max-w-4xl mx-auto px-4 mt-12 mb-20">
