@@ -552,22 +552,36 @@ export default function Home() {
                 <li className="flex items-center gap-3">
                   <span className="text-2xl">🚙</span>
                   <div>
-                    <p className="font-bold text-white">Espectacular Camioneta (Toyota)</p>
-                    <p className="text-xs text-gray-500">Cero Kilómetros, lista para estrenar. Tracción para cualquier terreno.</p>
+                    <p className="font-bold text-white">Toyota 4.5 Estacas</p>
+                    <p className="text-xs text-gray-500">Con motor 1KZ turbo diésel. ¡La máquina definitiva para el trabajo pesado!</p>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-2xl">🏍️</span>
                   <div>
-                    <p className="font-bold text-white">2 Motos AKT Flex 125 (Modelo 2027)</p>
-                    <p className="text-xs text-gray-500">Agilidad, economía y diseño moderno. Totalmente nuevas.</p>
+                    <p className="font-bold text-white">Moto Suzuki V-Strom 160</p>
+                    <p className="text-xs text-gray-500">Cero Kilómetros, Modelo 2026. Aventura y potencia garantizada.</p>
+                  </div>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-2xl">🛵</span>
+                  <div>
+                    <p className="font-bold text-white">Moto AKT Flex 125</p>
+                    <p className="text-xs text-gray-500">Cero Kilómetros, Modelo 2027. Agilidad y economía para el día a día.</p>
+                  </div>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-2xl">💰</span>
+                  <div>
+                    <p className="font-bold text-white">$10.000.000 en Efectivo</p>
+                    <p className="text-xs text-gray-500">Diez millones de pesos colombianos listos para ser transferidos al ganador.</p>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="text-2xl">🚛</span>
                   <div>
                     <p className="font-bold text-white">Entrega Nacional Gratuita</p>
-                    <p className="text-xs text-gray-500">Si ganas y estás fuera de nuestra ciudad, te lo llevamos hasta la puerta de tu casa.</p>
+                    <p className="text-xs text-gray-500">Te lo llevamos a cualquier parte del país con traspasos totalmente pagos.</p>
                   </div>
                 </li>
               </ul>
