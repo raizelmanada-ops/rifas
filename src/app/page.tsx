@@ -524,7 +524,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold mb-2">100% Legal y Transparente</h3>
                   <p className="text-sm text-gray-400 leading-relaxed">
-                    Nuestro sorteo se rige estrictamente por los resultados del <strong className="text-white">Premio Mayor de la Lotería de Medellín</strong>. No hay manipulación, el azar decide frente a todo el país.
+                    Nuestro sorteo se rige estrictamente por los resultados del <strong className="text-white">Premio Mayor de la Lotería de Boyacá (Sorteo 8 de Agosto)</strong>. No hay manipulación, el azar decide frente a todo el país.
                   </p>
                 </div>
               </div>
