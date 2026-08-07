@@ -548,8 +548,8 @@ export default function Home() {
         href={`https://wa.me/${whatsappAdmin}?text=Hola,%20tengo%20una%20duda%20sobre%20el%20sorteo.`} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="fixed bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_25px_rgba(37,211,102,1)] hover:bg-[#128C7E] flex items-center justify-center border-2 border-white/20"
-        style={{ position: 'fixed', bottom: '90px', right: '20px', zIndex: 2147483647 }}
+        className="fixed bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_25px_rgba(37,211,102,1)] hover:bg-[#128C7E] flex items-center justify-center border-2 border-white/20 transition-all hover:scale-110"
+        style={{ position: 'fixed', bottom: '130px', right: '20px', zIndex: 2147483647 }}
         aria-label="Contactar por WhatsApp"
       >
         <svg viewBox="0 0 24 24" className="w-12 h-12 relative z-10" fill="currentColor">
