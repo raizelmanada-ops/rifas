@@ -559,8 +559,8 @@ export default function Home() {
                 <li className="flex items-center gap-3">
                   <span className="text-2xl">🏍️</span>
                   <div>
-                    <p className="font-bold text-white">Moto AKT Flex 125 (Modelo 2027)</p>
-                    <p className="text-xs text-gray-500">Agilidad, economía y diseño moderno. Totalmente nueva.</p>
+                    <p className="font-bold text-white">2 Motos AKT Flex 125 (Modelo 2027)</p>
+                    <p className="text-xs text-gray-500">Agilidad, economía y diseño moderno. Totalmente nuevas.</p>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
